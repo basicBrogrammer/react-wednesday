@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 const CommunicationContext = React.createContext();
 
 const CommunicationContextProvider = ({ children }) => {

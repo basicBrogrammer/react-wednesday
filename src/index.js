@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CommunicationContextProvider from './context/communication';
+import TimelineContextProvider from './context/timeline';
 import AccountContextProvider from './context/account';
 
 ReactDOM.render(
   <React.StrictMode>
     <AccountContextProvider>
-      <CommunicationContextProvider>
+      <TimelineContextProvider>
         <App />
-      </CommunicationContextProvider>
+      </TimelineContextProvider>
     </AccountContextProvider>
   </React.StrictMode>,
   document.getElementById('root'),

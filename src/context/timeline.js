@@ -5,7 +5,6 @@ const TimelineContext = React.createContext();
 
 const initialPosts = createPosts(10);
 const TimelineContextProvider = ({ children }) => {
-  debugger;
   const [posts, setPosts] = useState(initialPosts);
   // For the purposes of this blog, selectedPost will be used to display
   // the "show page"

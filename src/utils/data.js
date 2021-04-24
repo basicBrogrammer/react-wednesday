@@ -8,12 +8,12 @@ const createList = (num, creator) => Array.from(new Array(num)).map(creator);
 export const createPostBody = (sentences) => createList(sentences, takeSentence).join(' ');
 
 export const createPosts = (i) =>
-  createList(i, (_i, id) => ({
-    id,
+  createList(i, (_i, postId) => ({
+    id: postId,
     user: { name: faker.name.firstName() },
     body: createPostBody(_.random(1, 3)),
-    comments: createList(_.random(1, 3), (_i, id) => ({
-      id,
+    comments: createList(_.random(1, 3), (_i, commentId) => ({
+      id: parseInt(`${postId}${commentId + 1}`),
       user: { name: faker.name.firstName() },
       body: faker.lorem.sentences(_.random(1, 3)),
     })),

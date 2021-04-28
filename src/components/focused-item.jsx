@@ -39,6 +39,7 @@ export default function FocusedItem() {
   if (selectedPost) {
     return (
       <SelectedItem item={selectedPost} title="Post Selected">
+        <p> Comment Section: </p>
         {selectedPost.comments.map((comment) => (
           <Item key={comment.id} item={comment} handleClick={() => setSelectedComment(comment)} />
         ))}

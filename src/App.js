@@ -1,9 +1,7 @@
 import React from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
-import { useAccountContext } from './context/account';
 import Timeline from './components/timeline';
 import { useTimelineContext } from './context/timeline';
 import Auth from './components/auth';

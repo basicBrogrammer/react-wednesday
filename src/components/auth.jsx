@@ -7,35 +7,20 @@ export default function Auth() {
     actions: userActions,
   } = useAccountContext();
 
-  if (isLoggedIn) {
-    return (
-      <>
-        <div>User: {user.name}</div>
-        <button
-          onClick={() => {
-            userActions.setUser(null);
-            userActions.setIsLoggedIn(false);
-          }}
-          className="border-2 rounded-sm p-1"
-        >
-          {' '}
-          Log Out{' '}
-        </button>
-      </>
-    );
-  }
+  const handleLogin = () => {
+    userActions.setUser({ name: 'Brobi Wan' });
+    userActions.setIsLoggedIn(true);
+  };
+  const handleLogOut = () => {
+    userActions.setUser(null);
+    userActions.setIsLoggedIn(false);
+  };
 
   return (
     <>
-      <p className="px-1">No user</p>
-      <button
-        onClick={() => {
-          userActions.setUser({ name: 'Brobi Wan' });
-          userActions.setIsLoggedIn(true);
-        }}
-        className="border-2 rounded-sm p-1"
-      >
-        Login
+      <p className="px-1">{isLoggedIn ? `User: ${user.name}` : 'No user'}</p>
+      <button onClick={isLoggedIn ? handleLogOut : handleLogin} className="border-2 rounded-sm p-1">
+        {isLoggedIn ? 'Log Out' : 'Login'}
       </button>
     </>
   );

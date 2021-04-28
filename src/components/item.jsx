@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Item = ({ item, handleClick, children }) => (
-  <div className="border-2 rounded-md my-2 p-1">
+  <div className="border-2 rounded-md my-2 p-1 w-full">
     <h3 className="font-semibold cursor-pointer" onClick={handleClick}>
       {item.id}) {item.user.name} said ...
     </h3>
